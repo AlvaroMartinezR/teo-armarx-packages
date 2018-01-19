@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<State version="1.2" name="MoveJoints" uuid="EC4DE69A-E2B9-4465-9C61-8FA9FB3517D0" width="800" height="600" type="Normal State">
+	<InputParameters>
+		<Parameter name="JointTargetPose" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no"/>
+		<Parameter name="JointTargetVelocity" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no"/>
+	</InputParameters>
+	<OutputParameters/>
+	<LocalParameters/>
+	<Substates/>
+	<Events>
+		<Event name="Failure">
+			<Description>Event for statechart-internal failures or optionally user-code failures</Description>
+		</Event>
+		<Event name="OnPoseReached"/>
+	</Events>
+	<Transitions/>
+</State>
+

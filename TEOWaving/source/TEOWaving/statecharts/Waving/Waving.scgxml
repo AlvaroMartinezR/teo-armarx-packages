@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StatechartGroup name="Waving" package="TEOWaving" generateContext="true">
+	<Proxies>
+		<Proxy value="RobotAPIInterfaces.kinematicUnit"/>
+	</Proxies>
+	<Configurations>
+		<Configuration profileName="Root">ArmarX.WavingRemoteStateOfferer.KinematicUnitName = Armar3KinematicUnit</Configuration>
+	</Configurations>
+	<State filename="CounterState.xml"/>
+	<State filename="MainState.xml" visibility="public"/>
+	<State filename="MoveJoints.xml"/>
+	<State filename="SetJoints.xml"/>
+</StatechartGroup>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenario name="TEOWave" creation="2018-01-18.12:59:17" globalConfigName="./config/global.cfg" package="TEOWaving">
+	<application name="XMLRemoteStateOfferer" instance="Waving" package="ArmarXCore" enabled="true"/>
+	<application name="SystemObserver" instance="" package="ArmarXCore" enabled="true"/>
+	<application name="ConditionHandler" instance="" package="ArmarXCore" enabled="true"/>
+	<application name="KinematicUnitSimulation" instance="" package="RobotAPI" enabled="true"/>
+	<application name="KinematicUnitObserver" instance="" package="RobotAPI" enabled="true"/>
+</scenario>
+

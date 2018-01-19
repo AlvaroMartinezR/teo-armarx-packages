@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<State version="1.2" name="MainState" uuid="DB48E15A-C6A5-4FA4-AFBD-53DBBB8C39B8" width="981.667" height="628.333" type="Normal State">
+	<InputParameters>
+		<Parameter name="JointValueMapFinalPose" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: 0\nLeftFrontalElbow: 0\nLeftFrontalShoulder: 0\nLeftSaggitalShoulder: 0\n"/>
+		</Parameter>
+		<Parameter name="JointValueMapInitPose" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.72}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.3}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.73}},"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: -0.730000019073486\nLeftFrontalElbow: -1\nLeftFrontalShoulder: -0.720000028610229\nLeftSaggitalShoulder: 0.300000011920929\n"/>
+		</Parameter>
+		<Parameter name="JointValueMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -1\n"/>
+		</Parameter>
+		<Parameter name="JointValueMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.2}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.200000002980232\n"/>
+		</Parameter>
+		<Parameter name="JointVelocityMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.5\n"/>
+		</Parameter>
+		<Parameter name="JointVelocityMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0.5\n"/>
+		</Parameter>
+		<Parameter name="counterMaxValue" type="::armarx::IntVariantData" docType="int" optional="no">
+			<DefaultValue profile="TEOSimulation" value='{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::IntVariantData","value":4}}' docValue="4"/>
+		</Parameter>
+	</InputParameters>
+	<OutputParameters/>
+	<LocalParameters>
+		<Parameter name="counterId" type="::armarx::ChannelRefBase" docType="ChannelRef" optional="no"/>
+	</LocalParameters>
+	<Substates>
+		<LocalState name="CounterState" refuuid="5275E560-8D29-4A29-9569-AFA52E7939B8" left="30" top="306.167" boundingSquareSize="100.002"/>
+		<EndState name="Failure" event="Failure" left="851.665" top="365.333" boundingSquareSize="100.002"/>
+		<LocalState name="FinalPose" refuuid="F61FA9BC-2939-40FB-B680-0B283F8A97D0" left="374.167" top="252.833" boundingSquareSize="100.002"/>
+		<LocalState name="InitPose" refuuid="F61FA9BC-2939-40FB-B680-0B283F8A97D0" left="374.167" top="522.833" boundingSquareSize="100.002"/>
+		<EndState name="Success" event="Success" left="661.667" top="280.333" boundingSquareSize="100.002"/>
+		<LocalState name="WaveBack" refuuid="EC4DE69A-E2B9-4465-9C61-8FA9FB3517D0" left="374.167" top="352" boundingSquareSize="100.002"/>
+		<LocalState name="WaveFwd" refuuid="EC4DE69A-E2B9-4465-9C61-8FA9FB3517D0" left="661.667" top="451.167" boundingSquareSize="100.002"/>
+	</Substates>
+	<Events>
+		<Event name="Failure">
+			<Description>Event for statechart-internal failures or optionally user-code failures</Description>
+		</Event>
+	</Events>
+	<StartState substateName="InitPose">
+		<ParameterMappings>
+			<ParameterMapping sourceType="Parent" from="JointValueMapInitPose" to="JointTargetPose"/>
+		</ParameterMappings>
+		<SupportPoints>
+			<SupportPoint posX="92.2292" posY="560.833"/>
+			<SupportPoint posX="134.208" posY="560.833"/>
+			<SupportPoint posX="282.117" posY="560.833"/>
+			<SupportPoint posX="365.342" posY="560.833"/>
+		</SupportPoints>
+	</StartState>
+	<Transitions>
+		<Transition from="CounterState" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="108.234" posY="306.442"/>
+				<SupportPoint posX="118.492" posY="294.892"/>
+				<SupportPoint posX="131.075" posY="283.275"/>
+				<SupportPoint posX="145" posY="275.833"/>
+				<SupportPoint posX="387.683" posY="146.075"/>
+				<SupportPoint posX="501.983" posY="128.908"/>
+				<SupportPoint posX="761.667" posY="220"/>
+				<SupportPoint posX="823.508" posY="241.692"/>
+				<SupportPoint posX="863.233" posY="310.842"/>
+				<SupportPoint posX="883.833" posY="357.733"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="CounterState" to="FinalPose" eventName="MaxCountReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="JointValueMapFinalPose" to="JointTargetPose"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="130.267" posY="336.467"/>
+				<SupportPoint posX="192.625" posY="326.758"/>
+				<SupportPoint posX="299.658" posY="310.092"/>
+				<SupportPoint posX="365.675" posY="299.808"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="CounterState" to="WaveBack" eventName="MaxCountNotReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="JointValueMapWaveBack" to="JointTargetPose"/>
+				<ParameterMapping sourceType="Parent" from="JointVelocityMapWaveFwd" to="JointTargetVelocity"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal>
+				<ParameterMapping sourceType="Parent" from="counterId" to="counterId"/>
+			</ParameterMappingsToParentsLocal>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="130.192" posY="363.6"/>
+				<SupportPoint posX="135.142" posY="365.1"/>
+				<SupportPoint posX="140.133" posY="366.442"/>
+				<SupportPoint posX="145" posY="367.5"/>
+				<SupportPoint posX="220.017" posY="383.858"/>
+				<SupportPoint posX="308.733" posY="388.592"/>
+				<SupportPoint posX="365.5" posY="389.817"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="InitPose" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.192" posY="573.367"/>
+				<SupportPoint posX="542.233" posY="588.05"/>
+				<SupportPoint posX="667.333" posY="605.328"/>
+				<SupportPoint posX="761.667" posY="562.5"/>
+				<SupportPoint posX="813.008" posY="539.193"/>
+				<SupportPoint posX="852.833" posY="486.55"/>
+				<SupportPoint posX="876.5" posY="448.175"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="WaveFwd" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="761.942" posY="474.533"/>
+				<SupportPoint posX="785.15" posY="466.925"/>
+				<SupportPoint posX="812.875" posY="456.758"/>
+				<SupportPoint posX="836.667" posY="445"/>
+				<SupportPoint posX="839.108" posY="443.792"/>
+				<SupportPoint posX="841.567" posY="442.517"/>
+				<SupportPoint posX="844.033" posY="441.183"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="InitPose" to="WaveFwd" eventName="OnPoseReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="JointValueMapWaveFwd" to="JointTargetPose"/>
+				<ParameterMapping sourceType="Parent" from="JointVelocityMapWaveFwd" to="JointTargetVelocity"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.233" posY="556.327"/>
+				<SupportPoint posX="519.842" posY="551.177"/>
+				<SupportPoint posX="589.108" posY="540.859"/>
+				<SupportPoint posX="646.667" posY="521.667"/>
+				<SupportPoint posX="648.942" posY="520.907"/>
+				<SupportPoint posX="651.242" posY="520.079"/>
+				<SupportPoint posX="653.542" posY="519.197"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="WaveFwd" to="CounterState" eventName="OnPoseReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="counterId" to="counterId"/>
+				<ParameterMapping sourceType="Parent" from="counterMaxValue" to="counterMaxValue"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="661.333" posY="491.083"/>
+				<SupportPoint posX="558.65" posY="492.967"/>
+				<SupportPoint posX="317.7" posY="486.292"/>
+				<SupportPoint posX="145" posY="394.167"/>
+				<SupportPoint posX="140.692" posY="391.867"/>
+				<SupportPoint posX="136.375" posY="389.275"/>
+				<SupportPoint posX="132.125" posY="386.517"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="WaveBack" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.35" posY="391.383"/>
+				<SupportPoint posX="562.883" posY="393.867"/>
+				<SupportPoint posX="748.225" posY="399.058"/>
+				<SupportPoint posX="842.733" posY="401.708"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="WaveBack" to="WaveFwd" eventName="OnPoseReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="JointValueMapWaveFwd" to="JointTargetPose"/>
+				<ParameterMapping sourceType="Parent" from="JointVelocityMapWaveFwd" to="JointTargetVelocity"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.383" posY="424.133"/>
+				<SupportPoint posX="485.2" posY="430.45"/>
+				<SupportPoint posX="496.858" posY="436.433"/>
+				<SupportPoint posX="508.333" posY="440.833"/>
+				<SupportPoint posX="566.733" posY="463.225"/>
+				<SupportPoint posX="586.242" posY="450.533"/>
+				<SupportPoint posX="646.667" posY="466.667"/>
+				<SupportPoint posX="648.833" posY="467.25"/>
+				<SupportPoint posX="651.042" posY="467.867"/>
+				<SupportPoint posX="653.258" posY="468.508"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="FinalPose" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.225" posY="274.517"/>
+				<SupportPoint posX="541.767" posY="254.975"/>
+				<SupportPoint posX="665.708" posY="229.442"/>
+				<SupportPoint posX="761.667" posY="268.333"/>
+				<SupportPoint posX="806.667" posY="286.575"/>
+				<SupportPoint posX="845.133" posY="327.117"/>
+				<SupportPoint posX="870.167" posY="359.042"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="FinalPose" to="Success" eventName="OnPoseReached">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="474.458" posY="295.592"/>
+				<SupportPoint posX="524.108" posY="300.367"/>
+				<SupportPoint posX="600.542" posY="307.725"/>
+				<SupportPoint posX="652.975" posY="312.767"/>
+			</SupportPoints>
+		</Transition>
+	</Transitions>
+</State>
+
