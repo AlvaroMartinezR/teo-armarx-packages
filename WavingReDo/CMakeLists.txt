@@ -16,6 +16,8 @@ armarx_project("WavingReDo")
 # Specify each ArmarX Package dependency with the following macro
 # depends_on_armarx_package(ArmarXGui "OPTIONAL")
 
+depends_on_armarx_package(RobotAPI)
+
 add_subdirectory(etc)
 add_subdirectory(source)
 

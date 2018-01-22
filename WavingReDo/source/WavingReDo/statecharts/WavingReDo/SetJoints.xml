@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<State version="1.2" name="SetJoints" uuid="B15A79A8-9606-48FD-8FCF-DD4DC59794F4" width="800" height="600" type="Normal State">
+	<InputParameters>
+		<Parameter name="JointTargetPose" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no"/>
+	</InputParameters>
+	<OutputParameters/>
+	<LocalParameters/>
+	<Substates/>
+	<Events>
+		<Event name="Failure">
+			<Description>Event for statechart-internal failures or optionally user-code failures</Description>
+		</Event>
+		<Event name="OnPoseReached"/>
+	</Events>
+	<Transitions/>
+</State>
+
