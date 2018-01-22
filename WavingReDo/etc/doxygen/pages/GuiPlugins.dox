@@ -1,0 +1,10 @@
+/**
+
+\page WavingReDo-GuiPlugins  WavingReDo Gui Plugins
+
+This is a list of Gui Plugins available in WavingReDo
+
+\subpage WavingReDo-GuiPlugins-WidgetName The page for WidgetName is defined in the WidgetNameWidgetController header file
+
+
+*/

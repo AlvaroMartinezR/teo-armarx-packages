@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<State version="1.2" name="MainState" uuid="A8AEB0D1-E944-4E78-99B4-AFD1B6550BAF" width="510" height="344.167" type="Normal State">
+	<InputParameters>
+		<Parameter name="counterMaxValue" type="::armarx::IntVariantData" docType="int" optional="no"/>
+	</InputParameters>
+	<OutputParameters/>
+	<LocalParameters>
+		<Parameter name="counterId" type="::armarx::ChannelRefBase" docType="ChannelRef" optional="no"/>
+	</LocalParameters>
+	<Substates>
+		<LocalState name="CounterState" refuuid="2E1E325E-8BC7-4D8B-B00A-99D4E67A8BAF" left="86.6667" top="189.5" boundingSquareSize="100.002"/>
+		<EndState name="Failure" event="Failure" left="379.998" top="140" boundingSquareSize="100.002"/>
+		<EndState name="Success" event="Success" left="379.998" top="238.667" boundingSquareSize="100.002"/>
+	</Substates>
+	<Events>
+		<Event name="Failure">
+			<Description>Event for statechart-internal failures or optionally user-code failures</Description>
+		</Event>
+	</Events>
+	<StartState substateName="CounterState">
+		<ParameterMappings>
+			<ParameterMapping sourceType="Parent" from="counterId" to="counterId"/>
+			<ParameterMapping sourceType="Parent" from="counterMaxValue" to="counterMaxValue"/>
+		</ParameterMappings>
+		<SupportPoints>
+			<SupportPoint posX="54.6758" posY="227.5"/>
+			<SupportPoint posX="60.8908" posY="227.5"/>
+			<SupportPoint posX="69.1158" posY="227.5"/>
+			<SupportPoint posX="77.9475" posY="227.5"/>
+		</SupportPoints>
+	</StartState>
+	<Transitions>
+		<Transition from="CounterState" to="Failure" eventName="Failure">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="186.767" posY="214.125"/>
+				<SupportPoint posX="191.783" posY="212.942"/>
+				<SupportPoint posX="196.817" posY="211.817"/>
+				<SupportPoint posX="201.667" posY="210.833"/>
+				<SupportPoint posX="259.033" posY="199.217"/>
+				<SupportPoint posX="325.317" posY="189.975"/>
+				<SupportPoint posX="371.483" posY="184.192"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="CounterState" to="Success" eventName="MaxCountReached">
+			<ParameterMappings/>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="186.975" posY="235.841"/>
+				<SupportPoint posX="238.042" posY="244.448"/>
+				<SupportPoint posX="317.633" posY="257.866"/>
+				<SupportPoint posX="371.517" posY="266.948"/>
+			</SupportPoints>
+		</Transition>
+		<Transition from="CounterState" to="CounterState" eventName="MaxCountNotReached">
+			<ParameterMappings>
+				<ParameterMapping sourceType="Parent" from="counterId" to="counterId"/>
+				<ParameterMapping sourceType="Parent" from="counterMaxValue" to="counterMaxValue"/>
+			</ParameterMappings>
+			<ParameterMappingsToParentsLocal/>
+			<ParameterMappingsToParentsOutput/>
+			<SupportPoints>
+				<SupportPoint posX="124.483" posY="189.867"/>
+				<SupportPoint posX="124.292" posY="176.6"/>
+				<SupportPoint posX="128.35" posY="165.833"/>
+				<SupportPoint posX="136.667" posY="165.833"/>
+				<SupportPoint posX="143.1" posY="165.833"/>
+				<SupportPoint posX="146.983" posY="172.275"/>
+				<SupportPoint posX="148.325" posY="181.333"/>
+			</SupportPoints>
+		</Transition>
+	</Transitions>
+</State>
+

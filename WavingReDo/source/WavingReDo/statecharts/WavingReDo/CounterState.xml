@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<State version="1.2" name="CounterState" uuid="2E1E325E-8BC7-4D8B-B00A-99D4E67A8BAF" width="800" height="600" type="Normal State">
+	<InputParameters>
+		<Parameter name="counterId" type="::armarx::ChannelRefBase" docType="ChannelRef" optional="no"/>
+		<Parameter name="counterMaxValue" type="::armarx::IntVariantData" docType="int" optional="no"/>
+	</InputParameters>
+	<OutputParameters/>
+	<LocalParameters/>
+	<Substates/>
+	<Events>
+		<Event name="Failure">
+			<Description>Event for statechart-internal failures or optionally user-code failures</Description>
+		</Event>
+		<Event name="MaxCountReached"/>
+		<Event name="MaxCountNotReached"/>
+	</Events>
+	<Transitions/>
+</State>
+
