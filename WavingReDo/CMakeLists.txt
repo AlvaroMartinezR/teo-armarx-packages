@@ -14,7 +14,7 @@ set(ARMARX_ENABLE_AUTO_CODE_FORMATTING TRUE)
 armarx_project("WavingReDo")
 
 # Specify each ArmarX Package dependency with the following macro
-# depends_on_armarx_package(ArmarXGui "OPTIONAL")
+ depends_on_armarx_package(ArmarXGui "OPTIONAL")
 
 depends_on_armarx_package(RobotAPI)
 
