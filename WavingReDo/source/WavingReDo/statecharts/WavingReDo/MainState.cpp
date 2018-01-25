@@ -38,27 +38,27 @@ void MainState::onEnter()
     // put your user code for the enter-point here
     // execution time should be short (<100ms)
     ARMARX_LOG << "MainState::onEnter()";
-    ChannelRefPtr counterId = ChannelRefPtr::dynamicCast(getSystemObserver()->startCounter(0,"counterId"));
+    ChannelRefPtr counterId = ChannelRefPtr::dynamicCast(getSystemObserver()->startCounter(0, "counterId"));
     local.setcounterId(counterId);
 }
 
 void MainState::run()
 {
-//    // put your user code for the execution-phase here
-//    // runs in seperate thread, thus can do complex operations
-//    // should check constantly whether isRunningTaskStopped() returns true
-//
-//// uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
-//    while (!isRunningTaskStopped()) // stop run function if returning true
-//    {
-//        // do your calculations
-//    }
+    //    // put your user code for the execution-phase here
+    //    // runs in seperate thread, thus can do complex operations
+    //    // should check constantly whether isRunningTaskStopped() returns true
+    //
+    // uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
+    //    while (!isRunningTaskStopped()) // stop run function if returning true
+    //    {
+    //        // do your calculations
+    //    }
 }
 
 void MainState::onBreak()
 {
-//    // put your user code for the breaking point here
-//    // execution time should be short (<100ms)
+    //    // put your user code for the breaking point here
+    //    // execution time should be short (<100ms)
 }
 
 void MainState::onExit()

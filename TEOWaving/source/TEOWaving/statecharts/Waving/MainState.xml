@@ -5,19 +5,19 @@
 			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}},"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: 0\nLeftFrontalElbow: 0\nLeftFrontalShoulder: 0\nLeftSaggitalShoulder: 0\n"/>
 		</Parameter>
 		<Parameter name="JointValueMapInitPose" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.72}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.3}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.73}},"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: -0.730000019073486\nLeftFrontalElbow: -1\nLeftFrontalShoulder: -0.720000028610229\nLeftSaggitalShoulder: 0.300000011920929\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.72}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.3}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.73}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: -0.730000019073486\nLeftFrontalShoulder: -0.720000028610229\nLeftSaggitalShoulder: 0.300000011920929\n"/>
 		</Parameter>
 		<Parameter name="JointValueMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -1\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0\n"/>
 		</Parameter>
 		<Parameter name="JointValueMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.2}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.200000002980232\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -1\n"/>
 		</Parameter>
 		<Parameter name="JointVelocityMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.5\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0.5\n"/>
 		</Parameter>
 		<Parameter name="JointVelocityMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0.5\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.5\n"/>
 		</Parameter>
 		<Parameter name="counterMaxValue" type="::armarx::IntVariantData" docType="int" optional="no">
 			<DefaultValue profile="TEOSimulation" value='{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::IntVariantData","value":4}}' docValue="4"/>
@@ -88,18 +88,10 @@
 				<ParameterMapping sourceType="Parent" from="JointValueMapWaveBack" to="JointTargetPose"/>
 				<ParameterMapping sourceType="Parent" from="JointVelocityMapWaveFwd" to="JointTargetVelocity"/>
 			</ParameterMappings>
-			<ParameterMappingsToParentsLocal>
-				<ParameterMapping sourceType="Parent" from="counterId" to="counterId"/>
-			</ParameterMappingsToParentsLocal>
+			<ParameterMappingsToParentsLocal/>
 			<ParameterMappingsToParentsOutput/>
 			<SupportPoints>
-				<SupportPoint posX="130.192" posY="363.6"/>
-				<SupportPoint posX="135.142" posY="365.1"/>
-				<SupportPoint posX="140.133" posY="366.442"/>
-				<SupportPoint posX="145" posY="367.5"/>
-				<SupportPoint posX="220.017" posY="383.858"/>
-				<SupportPoint posX="308.733" posY="388.592"/>
-				<SupportPoint posX="365.5" posY="389.817"/>
+				<SupportPoint posX="252.084" posY="366.584"/>
 			</SupportPoints>
 		</Transition>
 		<Transition from="InitPose" to="Failure" eventName="Failure">

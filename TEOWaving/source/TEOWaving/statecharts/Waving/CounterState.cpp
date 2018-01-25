@@ -37,6 +37,15 @@ void CounterState::onEnter()
 {
     // put your user code for the enter-point here
     // execution time should be short (<100ms)
+
+}
+
+void CounterState::run()
+{
+    //    // put your user code for the execution-phase here
+    //    // runs in seperate thread, thus can do complex operations
+    //    // should check constantly whether isRunningTaskStopped() returns true
+    //
     ARMARX_LOG << "Enter CounterState";
 
     ChannelRefPtr counterId = in.getcounterId();
@@ -51,25 +60,17 @@ void CounterState::onEnter()
     {
         emitMaxCountNotReached();
     }
-}
-
-void CounterState::run()
-{
-//    // put your user code for the execution-phase here
-//    // runs in seperate thread, thus can do complex operations
-//    // should check constantly whether isRunningTaskStopped() returns true
-//
-//// uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
-//    while (!isRunningTaskStopped()) // stop run function if returning true
-//    {
-//        // do your calculations
-//    }
+    // uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
+    //    while (!isRunningTaskStopped()) // stop run function if returning true
+    //    {
+    //        // do your calculations
+    //    }
 }
 
 void CounterState::onBreak()
 {
-//    // put your user code for the breaking point here
-//    // execution time should be short (<100ms)
+    //    // put your user code for the breaking point here
+    //    // execution time should be short (<100ms)
 }
 
 void CounterState::onExit()

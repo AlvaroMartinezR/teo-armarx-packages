@@ -2,9 +2,17 @@
 <StatechartGroup name="Waving" package="TEOWaving" generateContext="true">
 	<Proxies>
 		<Proxy value="RobotAPIInterfaces.kinematicUnit"/>
+		<Proxy value="RobotAPIInterfaces.kinematicUnitObserver"/>
 	</Proxies>
 	<Configurations>
-		<Configuration profileName="Root">ArmarX.WavingRemoteStateOfferer.KinematicUnitName = Armar3KinematicUnit</Configuration>
+		<Configuration profileName="Root">
+
+# Required Property
+ArmarX.WavingRemoteStateOfferer.KinematicUnitName = Armar3KinematicUnit
+
+# Required Property
+ArmarX.WavingRemoteStateOfferer.KinematicUnitObserverName = Armar3KinematicUnitObserver
+</Configuration>
 	</Configurations>
 	<State filename="CounterState.xml"/>
 	<State filename="MainState.xml" visibility="public"/>

@@ -41,10 +41,11 @@ void SetJoints::onEnter()
     //build conditions for OnPoseReached
     Term poseReachedConditions;
     const float eps = 0.05f; //This will trigger the OnPoseReachedevent if the actual pose is very close to the specified pose(+/- 0.05).
-    for (const auto& jointNameValue : jointValueMap){
-        std::string jointNameDatafield = "Armar3KinematicUnitObserver.jointangles." +jointNameValue.first;
+    for (const auto & jointNameValue : jointValueMap)
+    {
+        std::string jointNameDatafield = "Armar3KinematicUnitObserver.jointangles." + jointNameValue.first;
         float jointValue = jointNameValue.second;
-        Literal jointValueReached(jointNameDatafield, "inrange",Literal::createParameterList(jointValue - eps, jointValue +eps));
+        Literal jointValueReached(jointNameDatafield, "inrange", Literal::createParameterList(jointValue - eps, jointValue + eps));
         poseReachedConditions = poseReachedConditions && jointValueReached;
     }
     installConditionForOnPoseReached(poseReachedConditions);
@@ -52,15 +53,15 @@ void SetJoints::onEnter()
 
 void SetJoints::run()
 {
-//    // put your user code for the execution-phase here
-//    // runs in seperate thread, thus can do complex operations
-//    // should check constantly whether isRunningTaskStopped() returns true
+    //    // put your user code for the execution-phase here
+    //    // runs in seperate thread, thus can do complex operations
+    //    // should check constantly whether isRunningTaskStopped() returns true
 
     std::map<std::string, float> jointValueMap = in.getJointTargetPose();
     NameControlModeMap positionControlModeMap;
 
     //sets to position control mode the joints in the map
-    for (const auto& jointNameValue : jointValueMap)
+    for (const auto & jointNameValue : jointValueMap)
     {
         positionControlModeMap[jointNameValue.first] = ePositionControl;
     }
@@ -69,18 +70,18 @@ void SetJoints::run()
     kinUnit->switchControlMode(positionControlModeMap);
     // set the angles defined by the joint target pose
     kinUnit->setJointAngles(jointValueMap);
-//
-//// uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
-//    while (!isRunningTaskStopped()) // stop run function if returning true
-//    {
-//        // do your calculations
-//    }
+    //
+    // uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
+    //    while (!isRunningTaskStopped()) // stop run function if returning true
+    //    {
+    //        // do your calculations
+    //    }
 }
 
 void SetJoints::onBreak()
 {
-//    // put your user code for the breaking point here
-//    // execution time should be short (<100ms)
+    //    // put your user code for the breaking point here
+    //    // execution time should be short (<100ms)
 }
 
 void SetJoints::onExit()

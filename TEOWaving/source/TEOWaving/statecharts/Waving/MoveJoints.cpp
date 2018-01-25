@@ -41,32 +41,34 @@ void MoveJoints::onEnter()
     //build conditions for OnPoseReached
     Term poseReachedConditions;
     const float eps = 0.05f; //This will trigger the OnPoseReachedevent if the actual pose is very close to the specified pose(+/- 0.05).
-    for (const auto& jointNameValue : jointValueMap){
-        std::string jointNameDatafield = "Armar3KinematicUnitObserver.jointangles." +jointNameValue.first;
+    for (const auto & jointNameValue : jointValueMap)
+    {
+        std::string jointNameDatafield = "Armar3KinematicUnitObserver.jointangles." + jointNameValue.first;
         float jointValue = jointNameValue.second;
-        Literal jointValueReached(jointNameDatafield, "inrange",Literal::createParameterList(jointValue - eps, jointValue +eps));
+        Literal jointValueReached(jointNameDatafield, "inrange", Literal::createParameterList(jointValue - eps, jointValue + eps));
         poseReachedConditions = poseReachedConditions && jointValueReached;
     }
     installConditionForOnPoseReached(poseReachedConditions);
+    ARMARX_LOG << jointValueMap;
 }
 
 void MoveJoints::run()
 {
-//    // put your user code for the execution-phase here
-//    // runs in seperate thread, thus can do complex operations
-//    // should check constantly whether isRunningTaskStopped() returns true
+    //    // put your user code for the execution-phase here
+    //    // runs in seperate thread, thus can do complex operations
+    //    // should check constantly whether isRunningTaskStopped() returns true
     std::map<std::string, float> jointVelocityMap = in.getJointTargetVelocity();
     NameControlModeMap velocityControlModeMap;
-    for (const auto& jointVelocity : jointVelocityMap)
+    for (const auto & jointVelocity : jointVelocityMap)
     {
         velocityControlModeMap[jointVelocity.first] = eVelocityControl;
     }
     KinematicUnitInterfacePrx kinUnit = getKinematicUnit();
     kinUnit->switchControlMode(velocityControlModeMap);
     kinUnit->setJointVelocities(jointVelocityMap);
-    }
+}
 
-//// uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
+// uncomment this if you need a continous run function. Make sure to use sleep or use blocking wait to reduce cpu load.
 //    while (!isRunningTaskStopped()) // stop run function if returning true
 //    {
 //        // do your calculations
@@ -75,8 +77,8 @@ void MoveJoints::run()
 
 void MoveJoints::onBreak()
 {
-//    // put your user code for the breaking point here
-//    // execution time should be short (<100ms)
+    //    // put your user code for the breaking point here
+    //    // execution time should be short (<100ms)
 }
 
 void MoveJoints::onExit()

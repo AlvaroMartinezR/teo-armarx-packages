@@ -41,7 +41,7 @@ void MoveJoints::onEnter()
     std::map<std::string, float> jointValueMap = in.getJointTargetPose();
     //build conditions for OnPoseReached
     Term poseReachedConditions;
-    const float eps = 0.05f; //This will trigger the OnPoseReached event if the actual pose is very close to the specified pose (+/- 0.05).
+    const float eps = 0.05f;
     for (const auto & jointNameValue : jointValueMap)
     {
         std::string jointNameDatafield = "Armar3KinematicUnitObserver.jointangles." + jointNameValue.first;
@@ -51,11 +51,14 @@ void MoveJoints::onEnter()
         poseReachedConditions = poseReachedConditions && jointValueReached;
     }
     installConditionForOnPoseReached(poseReachedConditions);
-
 }
 
 void MoveJoints::run()
 {
+    // put your user code for the execution-phase here
+    // runs in seperate thread, thus can do complex operations
+    // should check constantly whether isRunningTaskStopped() returns true
+
     std::map<std::string, float> jointVelocityMap = in.getJointTargetVelocity();
     NameControlModeMap velocityControlModeMap;
     for (const auto & jointVelocity : jointVelocityMap)

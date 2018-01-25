@@ -8,16 +8,16 @@
 			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.72}},"LeftSaggitalShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.3}},"LeftAxialShoulder":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.73}},"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftAxialShoulder: -0.730000019073486\nLeftFrontalElbow: -1\nLeftFrontalShoulder: -0.720000028610229\nLeftSaggitalShoulder: 0.300000011920929\n"/>
 		</Parameter>
 		<Parameter name="JointValueMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-1}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -1\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.7}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.699999988079071\n"/>
 		</Parameter>
 		<Parameter name="JointValueMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.2}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.200000002980232\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.35}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.349999994039536\n"/>
 		</Parameter>
 		<Parameter name="JointVelocityMapWaveBack" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.5\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0.5\n"/>
 		</Parameter>
 		<Parameter name="JointVelocityMapWaveFwd" type="::armarx::StringValueMapBase(::armarx::FloatVariantData)" docType="Map(float)" optional="no">
-			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: 0.5\n"/>
+			<DefaultValue profile="TEOSimulation" value='{"map":{"LeftFrontalElbow":{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::FloatVariantData","value":-0.5}}},"type":"::armarx::StringValueMapBase"}' docValue="LeftFrontalElbow: -0.5\n"/>
 		</Parameter>
 		<Parameter name="counterMaxValue" type="::armarx::IntVariantData" docType="int" optional="no">
 			<DefaultValue profile="TEOSimulation" value='{"type":"::armarx::SingleVariantBase","variant":{"typeName":"::armarx::IntVariantData","value":5}}' docValue="5"/>
